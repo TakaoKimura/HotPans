@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>パン屋名:</strong>
+  <%= @bread_store.name %>
+</p>
+
+<p>
+  <strong>電話番号:</strong>
+  <%= @bread_store.phone_number %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @bread_store.address %>
+</p>
+
+<%= link_to '編集', edit_bread_store_path(@bread_store) %> |
+<%= link_to 'パン屋リスト戻る', bread_stores_path %>
