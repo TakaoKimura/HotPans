@@ -1,3 +1,11 @@
 language: ruby
 rvm:
 - 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: DQ62MN8I4JeL3VzIsjEQHXP4OdOzKJizVCl58WVz4D1ZD92C2u/MCW3dB+7rv2lZ0eItuOlqLADx3Ws0+actNTmcOeasjFRS+QKjbAojxq5RbFSJPSptblvaRFKxsq1gZE/fCia+Wv+vXILBALAlOdjuHHMU2vkV+C/O5YPIDy4=
+  app: nameless-reaches-2339
+  on:
+    repo: gonewiththewind1312/HotPans
+  run: "rake db:migrate"
