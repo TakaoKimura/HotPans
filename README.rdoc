@@ -1,2 +1,2 @@
-HotPans
+HotPans Project
 Ruby on Rails
