@@ -1,4 +1,6 @@
 HotPans::Application.routes.draw do
+  resources :breads
+
   resources :bread_stores
 
   get "welcome/index"

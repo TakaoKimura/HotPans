@@ -1,0 +1,29 @@
+<h1>パンリスト</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>パン名</th>
+      <th>種類</th>
+      <th>表示</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @breads.each do |bread| %>
+      <tr>
+        <td><%= bread.name %></td>
+        <td><%= bread.kind %></td>
+        <td><%= link_to '表示', bread %></td>
+        <td><%= link_to '編集', edit_bread_path(bread) %></td>
+        <td><%= link_to '削除', bread, method: :delete, data: { confirm: 'パンの情報を削除しますか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しいパンを追加する', new_bread_path %>

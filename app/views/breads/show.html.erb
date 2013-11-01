@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>パン名:</strong>
+  <%= @bread.name %>
+</p>
+
+<p>
+  <strong>種類:</strong>
+  <%= @bread.kind %>
+</p>
+
+<%= link_to '編集', edit_bread_path(@bread) %> |
+<%= link_to 'パンリストに戻る', breads_path %>

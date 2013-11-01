@@ -1,0 +1,25 @@
+<%= form_for(@bread) do |f| %>
+  <% if @bread.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bread.errors.count, "error") %> でパンが作成できなかった:</h2>
+
+      <ul>
+      <% @bread.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "パン名" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :kind, "種類" %><br>
+    <%= f.text_field :kind %>
+  </div>
+  <div class="actions">
+    <%= f.submit getButtonNameByAction()%>
+  </div>
+<% end %>
