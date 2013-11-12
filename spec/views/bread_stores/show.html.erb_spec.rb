@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "bread_stores/show" do
+=begin  
   before(:each) do
     @bread_store = assign(:bread_store, stub_model(BreadStore,
       :name => "Name",
@@ -16,4 +17,5 @@ describe "bread_stores/show" do
     rendered.should match(/Phone Number/)
     rendered.should match(/Address/)
   end
+=end
 end

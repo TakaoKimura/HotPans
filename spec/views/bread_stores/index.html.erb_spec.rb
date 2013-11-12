@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "bread_stores/index" do
+=begin  
   before(:each) do
     assign(:bread_stores, [
       stub_model(BreadStore,
@@ -23,4 +24,5 @@ describe "bread_stores/index" do
     assert_select "tr>td", :text => "Phone Number".to_s, :count => 2
     assert_select "tr>td", :text => "Address".to_s, :count => 2
   end
+=end  
 end
