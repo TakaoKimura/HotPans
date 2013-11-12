@@ -5,12 +5,12 @@ describe "bread_stores/index" do
     assign(:bread_stores, [
       stub_model(BreadStore,
         :name => "Name",
-        :phone_number => "Phone Number",
+        :phone_number => "12-34",
         :address => "Address"
       ),
       stub_model(BreadStore,
         :name => "Name",
-        :phone_number => "Phone Number",
+        :phone_number => "12-34",
         :address => "Address"
       )
     ])

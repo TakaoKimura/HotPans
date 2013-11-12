@@ -4,7 +4,7 @@ describe "bread_stores/new" do
   before(:each) do
     assign(:bread_store, stub_model(BreadStore,
       :name => "MyString",
-      :phone_number => "MyString",
+      :phone_number => "12-34",
       :address => "MyString"
     ).as_new_record)
   end

@@ -4,7 +4,7 @@ describe "bread_stores/show" do
   before(:each) do
     @bread_store = assign(:bread_store, stub_model(BreadStore,
       :name => "Name",
-      :phone_number => "Phone Number",
+      :phone_number => "12-34",
       :address => "Address"
     ))
   end
