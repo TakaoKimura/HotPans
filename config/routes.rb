@@ -1,9 +1,12 @@
 HotPans::Application.routes.draw do
   resources :breads
 
+  post '/bread_stores/:id/edit_confirm', to: 'bread_stores#edit_confirm', as: 'edit_confirm_bread_store'
+  post '/bread_stores/confirm', to: 'bread_stores#confirm', as: 'confirm_bread_store'
+  
   resources :bread_stores
 
-  get "welcome/index"
+  # get '/bread_stores/confirm', to: 'bread_stores#confirm', as: 'confirm_bread_store'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

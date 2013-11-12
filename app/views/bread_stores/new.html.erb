@@ -1,5 +1,5 @@
 <h1>新しいパン屋を作る</h1>
 
-<%= render 'form' %>
+<%= render :partial => 'form', :locals => {:current_view => "new"}  %>
 
 <%= link_to 'パン屋リストに戻る', bread_stores_path %>

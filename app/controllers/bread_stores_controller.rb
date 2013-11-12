@@ -1,5 +1,5 @@
 class BreadStoresController < ApplicationController
-  before_action :set_bread_store, only: [:show, :edit, :update, :destroy]
+  before_action :set_bread_store, only: [:show, :edit, :update, :edit_confirm, :destroy]
 
   # GET /bread_stores
   # GET /bread_stores.json
@@ -15,11 +15,28 @@ class BreadStoresController < ApplicationController
   # GET /bread_stores/new
   def new
     @bread_store = BreadStore.new
-    
+  end
+  
+  # POST /bread_stores/confirm
+  def confirm
+    @bread_store = BreadStore.new(bread_store_params)
+    if !@bread_store.valid?
+      render :new
+    end
   end
 
   # GET /bread_stores/1/edit
   def edit
+    @bread_store = BreadStore.find(params[:id])
+  end
+  
+  # POST /bread_stores/1/edit_confirm
+  def edit_confirm
+    @bread_store = BreadStore.find(params[:id])
+    @bread_store.attributes = bread_store_params
+    if !@bread_store.valid?
+      render :edit
+    end
   end
 
   # POST /bread_stores
@@ -32,8 +49,7 @@ class BreadStoresController < ApplicationController
         format.html { redirect_to @bread_store, notice: 'パン屋を作成した.' }
         format.json { render action: 'show', status: :created, location: @bread_store }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @bread_store.errors, status: :unprocessable_entity }
+        format.html { redirect_to bread_stores_url, notice_error: 'エラーが発生した。'}
       end
     end
   end
@@ -46,8 +62,7 @@ class BreadStoresController < ApplicationController
         format.html { redirect_to @bread_store, notice: 'パン屋情報を編集した.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @bread_store.errors, status: :unprocessable_entity }
+        format.html { redirect_to @bread_store, notice_error: 'エラーが発生した。'}
       end
     end
   end
@@ -61,6 +76,9 @@ class BreadStoresController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # Form validator
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
