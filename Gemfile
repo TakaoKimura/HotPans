@@ -53,6 +53,7 @@ gem 'rails_12factor', group: :production
 
 # For Facebook authentication
 gem 'devise'
+gem 'devise-encryptable'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'oauth2'
