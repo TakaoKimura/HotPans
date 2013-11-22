@@ -1,4 +1,7 @@
 HotPans::Application.routes.draw do
+  get "authentications/create"
+  get '/auth/:provider/callback' => 'authentications#create'
+  devise_for :bread_store_managers
   resources :breads
 
   post '/bread_stores/:id/edit_confirm', to: 'bread_stores#edit_confirm', as: 'edit_confirm_bread_store'

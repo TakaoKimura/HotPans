@@ -50,3 +50,9 @@ end
 gem 'rspec-rails', '~> 2.0', group: [:development, :test]
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
+
+# For Facebook authentication
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
