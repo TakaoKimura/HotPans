@@ -9,3 +9,7 @@ deploy:
   on:
     repo: gonewiththewind1312/HotPans
   run: "rake db:migrate"
+matrix:
+  allow_failures:
+    - dpl: 1.5.2
+
