@@ -8,8 +8,8 @@ deploy:
   app: hotpans
   on:
     repo: gonewiththewind1312/HotPans
-  run: "rake db:migrate"
-matrix:
-  allow_failures:
-    - dpl: 1.5.2
+    rvm: 2.0.0
+  run: 
+    - "gem install dpl"
+    - "rake db:migrate"
 
