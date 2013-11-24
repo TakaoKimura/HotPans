@@ -8,7 +8,8 @@ class AuthenticationsController < ApplicationController
     if authentication
       # Authentication found, sign the bread_store_manager in.
       flash[:notice] = "Signed in successfully."
-      sign_in_and_redirect(bread_stores, authentication.bread_store_manager)
+      sign_in(authentication.bread_store_manager)
+      redirect_to bread_store_managers_url
     else
     # Authentication not found, thus a new bread_store_manager.
       bread_store_manager = BreadStoreManager.new
