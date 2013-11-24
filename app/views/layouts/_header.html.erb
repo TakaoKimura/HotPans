@@ -12,9 +12,16 @@
 					</li>
 					<li>
 						<%= link_to "パン屋登録", '/bread_stores/new' %>
-					</li>
+					</li>					
 					<li>
-						<%= link_to 'Login with Facebook', '/auth/facebook/' %>
+						<% if bread_store_manager_signed_in? %>
+						  <%= link_to current_bread_store_manager.email, bread_store_managers_url %>
+						  </li>
+						  <li>
+						  <%= link_to "Log out", destroy_bread_store_manager_session_path, :method => :delete %>
+						<% else %>
+						  <%= link_to 'Login with Facebook', '/auth/facebook/' %>
+						<% end %>
 					</li>
 				</ul>
 			</nav>
