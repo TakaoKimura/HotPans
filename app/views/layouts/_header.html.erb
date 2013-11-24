@@ -15,7 +15,7 @@
 					</li>					
 					<li>
 						<% if bread_store_manager_signed_in? %>
-						  <%= link_to current_bread_store_manager.email, bread_store_managers_url %>
+						  <%= link_to current_bread_store_manager.manager_name, bread_store_managers_url %>
 						  </li>
 						  <li>
 						  <%= link_to "Log out", destroy_bread_store_manager_session_path, :method => :delete %>
