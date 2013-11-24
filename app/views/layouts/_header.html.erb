@@ -18,7 +18,7 @@
 						  <%= link_to current_bread_store_manager.manager_name, bread_store_managers_url %>
 						  </li>
 						  <li>
-						  <%= link_to "ログアウト", destroy_bread_store_manager_session_path, :method => :delete %>
+						  <%= link_to "ログオフ", destroy_bread_store_manager_session_path, :method => :delete %>
 						<% else %>
 						  <%= link_to 'Facebookでログイン', '/auth/facebook/' %>
 						<% end %>
