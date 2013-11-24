@@ -1,4 +1,6 @@
 HotPans::Application.routes.draw do
+  get "bread_store_managers/index"
+  get "bread_store_managers" => 'bread_store_managers#index'
   get "authentications/create"
   get '/auth/:provider/callback' => 'authentications#create'
   devise_for :bread_store_managers
