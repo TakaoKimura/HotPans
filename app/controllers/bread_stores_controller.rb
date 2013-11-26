@@ -33,13 +33,13 @@ class BreadStoresController < ApplicationController
   # GET /bread_stores/1/edit
   def edit
     param_id = params[:id]
-    current_bread_store = current_bread_store_manager.bread_store
+    user_bread_store = current_bread_store_manager.bread_store
     if current_bread_store.nil?
       redirect_to new_bread_store_path
-    elsif current_bread_store.id == param_id
-      redirect_to edit_bread_store_path(current_bread_store)
+    elsif user_bread_store.id != param_id
+      redirect_to edit_bread_store_path(user_bread_store)
     else
-      @bread_store = BreadStore.find(params[:id])
+      @bread_store = user_bread_store
     end
   end
   
