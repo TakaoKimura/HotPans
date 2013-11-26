@@ -1,6 +1,3 @@
-<% if !bread_store_manager_signed_in? %>
-<%= link_to "ログインしてください", "/auth/facebook/" %>
-<% else %> 
 <h1>全てのユーザーのパン屋リスト</h1>
 <% if @bread_stores.empty?%>
 	現在パン屋情報はありません。<br>
@@ -48,8 +45,7 @@
   </tbody>
 </table>
 <br>
-<% if current_bread_store_manager.bread_store.nil? %>
+<% if bread_store_manager_signed_in? && current_bread_store_manager.bread_store.nil? %>
 	<%= link_to '新しいパン屋を登録する', new_bread_store_path %>
 <% end %>	
-<% end %>
 <% end %>

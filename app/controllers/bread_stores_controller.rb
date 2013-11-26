@@ -1,5 +1,5 @@
 class BreadStoresController < ApplicationController
-  before_filter :require_login, :except => [:index]
+  before_filter :require_login, :except => [:index, :show]
   before_action :set_bread_store, only: [:show, :edit, :update, :edit_confirm, :destroy]
 
   # GET /bread_stores

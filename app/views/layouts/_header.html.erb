@@ -7,10 +7,10 @@
 					<li>
 						<%= link_to "パンリスト",    breads_path %>
 					</li>
-					<% if bread_store_manager_signed_in? %>
 					<li>
 						<%= link_to "パン屋リスト", bread_stores_path %>
 					</li>
+					<% if bread_store_manager_signed_in? %>
 					<li>
 						<% if current_bread_store_manager.bread_store.nil? %>
 							<%= link_to "パン屋登録", new_bread_store_path %>
