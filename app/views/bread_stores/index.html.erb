@@ -21,12 +21,24 @@
   <tbody>
     <% @bread_stores.each do |bread_store| %>
       <tr class="active">
-        <td><%= bread_store.name %></td>
-        <td><%= bread_store.phone_number %></td>
-        <td><%= bread_store.address %></td>
-        <td><%= link_to '表示', bread_store %></td> 
-        <%# <td><%= link_to '編集', edit_bread_store_path(bread_store) %></td> %>
-        <%# <td><%= link_to '削除', bread_store, method: :delete, data: { confirm: 'パン屋を削除しますか?' } %></td> %>
+        <td>
+        	<%= bread_store.name %>
+        </td>
+        <td>
+        	<%= bread_store.phone_number %>
+        </td>
+        <td>
+			<%= bread_store.address %>
+		</td>
+        <td>
+        	<%= link_to '表示', bread_store %>
+		</td> 
+        <td>
+        	<%# link_to '編集', edit_bread_store_path(bread_store) %>
+        </td>
+        <td>
+        	<%# link_to '削除', bread_store, method: :delete, data: { confirm: 'パン屋を削除しますか?' } %>
+		</td>
       </tr>
     <% end %>
   </tbody>
