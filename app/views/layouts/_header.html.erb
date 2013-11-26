@@ -7,12 +7,18 @@
 					<li>
 						<%= link_to "パンリスト",    '/breads' %>
 					</li>
+					<% if bread_store_manager_signed_in? %>
 					<li>
-						<%= link_to "パン屋リスト",    '/bread_stores' %>
+						<%= link_to "bread store list", bread_stores_path %>
 					</li>
 					<li>
-						<%= link_to "パン屋登録", '/bread_stores/new' %>
-					</li>					
+						<% if current_bread_store_manager.bread_store.nil? %>
+							<%= link_to "create new", new_bread_store_path %>
+						<% else %>
+							<%= link_to "edit", edit_bread_store_path(current_bread_store_manager.bread_store.id) %>
+						<% end %>
+					</li>	
+					<% end %>	
 					<li>
 						<% if bread_store_manager_signed_in? %>
 						  <%= link_to current_bread_store_manager.manager_name, bread_store_managers_url %>

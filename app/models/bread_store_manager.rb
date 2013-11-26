@@ -4,6 +4,7 @@ class BreadStoreManager < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :authentications, :dependent => :delete_all
+  has_one :bread_store
   def apply_omniauth(auth)
     # In previous omniauth, 'user_info' was used in place of 'raw_info'
     self.email = auth['extra']['raw_info']['email']

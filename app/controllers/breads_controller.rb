@@ -1,4 +1,5 @@
 class BreadsController < ApplicationController
+  before_filter :require_login, :except => [:index]
   before_action :set_bread, only: [:show, :edit, :update, :destroy]
 
   # GET /breads

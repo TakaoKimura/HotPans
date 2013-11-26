@@ -1,3 +1,6 @@
+<% if !bread_store_manager_signed_in? %>
+<%= link_to "Login", "/auth/facebook/" %>
+<% else %> 
 <h1>パン屋リスト</h1>
 <% if @bread_stores.empty?%>
 	現在パン屋情報はありません。<br>
@@ -10,8 +13,8 @@
       <th>電話番号</th>
       <th>住所</th>
       <th>表示</th>
-      <th>編集</th>
-      <th>削除</th>
+      <%# <th>編集</th> %>
+      <%# <th>削除</th> %>
     </tr>
   </thead>
 
@@ -21,9 +24,9 @@
         <td><%= bread_store.name %></td>
         <td><%= bread_store.phone_number %></td>
         <td><%= bread_store.address %></td>
-        <td><%= link_to '表示', bread_store %></td>
-        <td><%= link_to '編集', edit_bread_store_path(bread_store) %></td>
-        <td><%= link_to '削除', bread_store, method: :delete, data: { confirm: 'パン屋を削除しますか?' } %></td>
+        <td><%= link_to '表示', bread_store %></td> 
+        <%# <td><%= link_to '編集', edit_bread_store_path(bread_store) %></td> %>
+        <%# <td><%= link_to '削除', bread_store, method: :delete, data: { confirm: 'パン屋を削除しますか?' } %></td> %>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +34,4 @@
 <br>
 <%= link_to '新しいパン屋を追加する', new_bread_store_path %>
 <% end %>
-
+<% end %>

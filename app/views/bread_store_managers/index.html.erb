@@ -1,5 +1,11 @@
 <% if @bread_store_manager.nil? %>
   エラー
 <% else %>
-  ユーザー名: <%= @bread_store_manager.manager_name %>
+  ユーザー名: <%= @bread_store_manager.manager_name %><br>
+  <% if @bread_store.nil? %>
+    <%= link_to "Create new bread store", "/bread_stores/new" %>
+  <% else %>
+    <%= render "shared/bread_store_show" %>
+    <%= link_to "Edit bread store", edit_bread_store_path(@bread_store) %>
+  <% end %>
 <% end %>

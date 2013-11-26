@@ -1,4 +1,5 @@
 class BreadStoresController < ApplicationController
+  before_filter :require_login, :except => [:index]
   before_action :set_bread_store, only: [:show, :edit, :update, :edit_confirm, :destroy]
 
   # GET /bread_stores
@@ -43,6 +44,7 @@ class BreadStoresController < ApplicationController
   # POST /bread_stores.json
   def create
     @bread_store = BreadStore.new(bread_store_params)
+    @bread_store.bread_store_manager_id = current_bread_store_manager.id
 
     respond_to do |format|
       if @bread_store.save
@@ -57,6 +59,7 @@ class BreadStoresController < ApplicationController
   # PATCH/PUT /bread_stores/1
   # PATCH/PUT /bread_stores/1.json
   def update
+    @bread_store.bread_store_manager_id = current_bread_store_manager.id
     respond_to do |format|
       if @bread_store.update(bread_store_params)
         format.html { redirect_to @bread_store, notice: 'パン屋情報を編集した.' }
