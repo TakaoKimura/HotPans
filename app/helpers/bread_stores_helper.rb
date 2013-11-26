@@ -3,8 +3,10 @@ module BreadStoresHelper
     current_action = params[:action]
     if (current_action == "new")
       "作成"
-    else
+    elsif (current_action == "edit")
       "更新"
+    else
+      "確定"
     end
   end
   
