@@ -15,10 +15,11 @@ class BreadStoresController < ApplicationController
 
   # GET /bread_stores/new
   def new
-    if current_bread_store_manager.bread_store.nil!
+    user_bread_store = current_bread_store_manager.bread_store
+    if user_bread_store.nil?
       @bread_store = BreadStore.new
     else
-      redirect_to edit_bread_store_path(current_bread_store_manager.bread_store)
+      redirect_to edit_bread_store_path(user_bread_store)
     end
   end
   
@@ -32,14 +33,14 @@ class BreadStoresController < ApplicationController
 
   # GET /bread_stores/1/edit
   def edit
-    param_id = params[:id]
+    param_id = params[:id].to_i
     user_bread_store = current_bread_store_manager.bread_store
-    if current_bread_store.nil?
+    if user_bread_store.nil?
       redirect_to new_bread_store_path
-    elsif user_bread_store.id != param_id
-      redirect_to edit_bread_store_path(user_bread_store)
-    else
+    elsif user_bread_store.id == param_id
       @bread_store = user_bread_store
+    else
+      redirect_to edit_bread_store_path(user_bread_store)
     end
   end
   
