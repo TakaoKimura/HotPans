@@ -7,6 +7,7 @@
     <%= link_to "パン屋登録を登録する", "/bread_stores/new" %>
   <% else %>
     <%= render "shared/bread_store_show" %>
-    <%= link_to "パン屋情報を編集する", edit_bread_store_path(@bread_store) %>
+    <%= link_to "パン屋情報を編集する", edit_bread_store_path(@bread_store) %><br>
+    <%= link_to 'パン屋を削除する', bread_store, method: :delete, data: { confirm: 'パン屋を削除しますか?' } %>
   <% end %>
 <% end %>

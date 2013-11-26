@@ -32,6 +32,8 @@
   </tbody>
 </table>
 <br>
-<%# <%= link_to '新しいパン屋を追加する', new_bread_store_path %> %>
+<% if current_bread_store_manager.bread_store.nil? %>
+	<%= link_to '新しいパン屋を登録する', new_bread_store_path %>
+<% end %>	
 <% end %>
 <% end %>

@@ -3,8 +3,9 @@
 	<p>
 		<%= link_to "パン屋リストへ", "/bread_stores" %>
 	</p>
+	<% if bread_store_manager_signed_in? %>
 	<p>
 		<%= link_to "パンリストへ", "/breads" %>
 	</p>
-	<%= link_to "パン屋登録!", '/bread_stores/new', class: "btn btn-large btn-primary" %>
+	<% end %>
 </div>
