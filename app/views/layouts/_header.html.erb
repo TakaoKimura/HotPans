@@ -15,7 +15,7 @@
 						<% if current_bread_store_manager.bread_store.nil? %>
 							<%= link_to "パン屋登録", new_bread_store_path %>
 						<% else %>
-							<%= link_to "パン屋編集", edit_bread_store_path(current_bread_store_manager.bread_store.id) %>
+							<%= link_to "パン屋編集", edit_bread_store_path(current_bread_store_manager.bread_store) %>
 						<% end %>
 					</li>	
 					<% end %>	

@@ -15,7 +15,11 @@ class BreadStoresController < ApplicationController
 
   # GET /bread_stores/new
   def new
-    @bread_store = BreadStore.new
+    if current_bread_store_manager.bread_store.nil!
+      @bread_store = BreadStore.new
+    else
+      redirect_to edit_bread_store_path(current_bread_store_manager.bread_store)
+    end
   end
   
   # POST /bread_stores/confirm
@@ -28,7 +32,15 @@ class BreadStoresController < ApplicationController
 
   # GET /bread_stores/1/edit
   def edit
-    @bread_store = BreadStore.find(params[:id])
+    param_id = params[:id]
+    current_bread_store = current_bread_store_manager.bread_store
+    if current_bread_store.nil?
+      redirect_to new_bread_store_path
+    elsif current_bread_store.id == param_id
+      redirect_to edit_bread_store_path(current_bread_store)
+    else
+      @bread_store = BreadStore.find(params[:id])
+    end
   end
   
   # POST /bread_stores/1/edit_confirm
