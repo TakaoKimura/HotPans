@@ -1,5 +1,5 @@
 <% if !bread_store_manager_signed_in? %>
-<%= link_to "Login", "/auth/facebook/" %>
+<%= link_to "ログインしてください", "/auth/facebook/" %>
 <% else %> 
 <h1>全てのユーザーのパン屋リスト</h1>
 <% if @bread_stores.empty?%>
