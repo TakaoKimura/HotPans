@@ -1,8 +1,8 @@
 <h1>パンリスト</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
-    <tr>
+    <tr class="warning">
       <th>パン名</th>
       <th>種類</th>
       <th>表示</th>
@@ -13,7 +13,7 @@
 
   <tbody>
     <% @breads.each do |bread| %>
-      <tr>
+      <tr class="active">
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
         <td><%= link_to '表示', bread %></td>
