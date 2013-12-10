@@ -1,37 +1,42 @@
-<%= form_for :bread_store, url: getFormActionURL(current_view), method: :post, html: { action: "confirm", class: "bread_store_form", id: "bread_store_form", role:"form" }  do |f| %>
-
+<%= form_for :bread_store, url: getFormActionURL(current_view), method: :post, html: { action: "confirm", class: "bs-example form-horizontal col-lg-6", id: "bread_store_form", role:"form" }  do |f| %>
+<fieldset>
+<legend>New Bread Store</legend>
 <div class="form-group">
-	<%= f.label :name, "パン屋名"%>
-	<div class="col-sm-10">
+	<%= f.label :name,"ten", class: "col-lg-2 control-label"%>
+	<div class="col-lg-10">
 		<%= f.text_field :name, class: "form-control" %>
 		<%if (!@bread_store.errors.get(:name) || @bread_store.errors.get(:name).length > 0)%>
-			<label class="inputError">パン屋名の２文字以上入力してください。</label>
+			<label class="text-danger">パン屋名の２文字以上入力してください。</label>
 		<%end%>
 	</div>
 </div>
 
 <div class="form-group">
-	<%= f.label :phone_number, "電話番号"%>
-	<div class="col-sm-10">
+	<%= f.label :phone_number, "phone", class: "col-lg-2 control-label"%>
+	<div class="col-lg-10">
 		<%= f.text_field :phone_number, class: "form-control" %>
 		<%if (!@bread_store.errors.get(:phone_number) || @bread_store.errors.get(:phone_number).length > 0)%>
-			<label class="inputError">電話番号は数字とハイフンのみ入力してください。</label>
+			<label class="text-danger">電話番号は数字とハイフンのみ入力してください。</label>
 		<%end%>
 	</div>
 </div>
 
 <div class="form-group">
-	<%= f.label :address, "住所" %>
-	<div class="col-sm-10">
+	<%= f.label :address, "address", class: "col-lg-2 control-label" %>
+	<div class="col-lg-10">
 		<%= f.text_field :address, class: "form-control"  %>
 		<%if (!@bread_store.errors.get(:address) || @bread_store.errors.get(:address).length > 0)%>
-			<label class="inputError">住所を入力してください。</label>
+			<label class="text-danger">住所を入力してください。</label>
 		<%end%>
 	</div>
 </div>
 
 <div class="form-group">
-	<%= f.submit getButtonNameByAction(), class: "btn btn-default"%>
+<div class="col-lg-10 col-lg-offset-2">
+        <%= button_tag "Reset", type: :reset, class: "btn btn-default" %>
+	<%= f.submit getButtonNameByAction(), class: "btn btn-primary"%>
 </div>
-
+</div>
+</fieldset>
 <% end %>
+<div class="float-clear"></div>
