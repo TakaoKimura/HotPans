@@ -19,11 +19,15 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe BreadStoresController do
-=begin
+
   # This should return the minimal set of attributes required to create a valid
   # BreadStore. As you add validations to BreadStore, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { "name" => "MyString", "phone_number" => "124", "address" => "AAA"} }
+  let(:invalid_attributes) { { "name" => "MyString", "phone_number" => "aaa", "address" => "AAA"} }
+
+  let(:example1) { { "name" => "パン屋岡田", "phone_number" => "090-2548-6324", "address" => "神奈川県横浜市鶴見区下野谷町４－１５４－３２サンパレスミシマ４０１号"} }
+  let(:example2) { { "name" => "ｵｶﾀﾞ", "phone_number" => "090-2548-632400000000000000", "address" => "〒270-0013ｻﾝﾊﾟﾚｽﾐｼﾏ"} }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -38,6 +42,13 @@ describe BreadStoresController do
     end
   end
 
+  #describe "new check" do
+  #  it "new時に失敗するかどうか" do
+  #    bread_store = BreadStore.create! invalid_attributes
+  #  end
+  #end
+
+
   describe "GET show" do
     it "assigns the requested bread_store as @bread_store" do
       bread_store = BreadStore.create! valid_attributes
@@ -45,7 +56,7 @@ describe BreadStoresController do
       assigns(:bread_store).should eq(bread_store)
     end
   end
-
+=begin
   describe "GET new" do
     it "assigns a new bread_store as @bread_store" do
       get :new, {}, valid_session

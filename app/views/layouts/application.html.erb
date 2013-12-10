@@ -2,7 +2,12 @@
 <html>
 	<head>
 		<title>HotPans</title>
-		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		
+		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+		
+		<link rel="stylesheet" href="http://bootswatch.com/amelia/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="http://bootswatch.com/amelia/bootswatch.min.css">
+		
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
 		<%= render 'layouts/shim' %>
@@ -10,7 +15,9 @@
 	<body>
 		<%= render 'layouts/header' %>
 		<div class="container">
-			<%= yield %>
+			<div class="main-content">
+				<%= yield %>
+			</div>
 			<%= render 'layouts/footer' %>
 		</div>
 

@@ -1,9 +1,16 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
+<div class="navbar navbar-default navbar-fixed-top">
+	
 		<div class="container">
-			<%= link_to "HotPans", :root, id: "logo" %>
-			<nav>
-				<ul class="nav pull-right">
+			<div class="navbar-header">
+				<%= link_to "HotPans", :root, class: "navbar-brand" %>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<%= link_to "パンリスト",    breads_path %>
 					</li>
@@ -30,7 +37,7 @@
 						<% end %>
 					</li>
 				</ul>
-			</nav>
+			</div>
 		</div>
-	</div>
-</header>
+	
+</div>

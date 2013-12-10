@@ -1,10 +1,17 @@
-<p id="notice"><%= notice %></p>
-<div class="center hero-unit">
+<div class="label label-success" id="notice">
+	<%= notice %>
+</div>
+<div class="jumbotron">
 	<h1>HotPansへよこそう</h1>
-	<p>
-		<%= link_to "パン屋リストへ", "/bread_stores" %>
-	</p>
-	<p>
-		<%= link_to "パンリストへ", "/breads" %>
-	</p>
+	<div class="bs-example">
+		<p>
+			<%= link_to "パン屋リストへ", "/bread_stores" %>
+		</p>
+		<p>
+			<%= link_to "パンリストへ", "/breads" %>
+		</p>
+		<p>
+			<%= link_to "Facebookでログイン", '/auth/facebook/', class: "btn btn-primary btn-lg"%>
+		</p>
+	</div>
 </div>

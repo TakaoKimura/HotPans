@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AuthenticationsController do
-=begin
+=begin  
   describe "GET 'create'" do
     it "returns http success" do
       get 'create'
