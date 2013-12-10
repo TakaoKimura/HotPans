@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<div class="content-block">
 <% if @bread_store_manager.nil? %>
   エラー
 <% else %>
@@ -14,3 +15,4 @@
     <%= link_to 'パン屋を削除する', @bread_store, :class => "labelNotifyDanger", method: :delete, data: { confirm: 'パン屋を削除しますか?' } %>
   <% end %>
 <% end %>
+</div>
