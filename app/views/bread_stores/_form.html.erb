@@ -2,7 +2,7 @@
 <fieldset>
 <legend>New Bread Store</legend>
 <div class="form-group">
-	<%= f.label :name,"ten", class: "col-lg-2 control-label"%>
+	<%= f.label :name,"パン屋名", class: "col-lg-2 control-label"%>
 	<div class="col-lg-10">
 		<%= f.text_field :name, class: "form-control" %>
 		<%if (!@bread_store.errors.get(:name) || @bread_store.errors.get(:name).length > 0)%>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="form-group">
-	<%= f.label :phone_number, "phone", class: "col-lg-2 control-label"%>
+	<%= f.label :phone_number, "電話番号", class: "col-lg-2 control-label"%>
 	<div class="col-lg-10">
 		<%= f.text_field :phone_number, class: "form-control" %>
 		<%if (!@bread_store.errors.get(:phone_number) || @bread_store.errors.get(:phone_number).length > 0)%>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="form-group">
-	<%= f.label :address, "address", class: "col-lg-2 control-label" %>
+	<%= f.label :address, "アドレス", class: "col-lg-2 control-label" %>
 	<div class="col-lg-10">
 		<%= f.text_field :address, class: "form-control"  %>
 		<%if (!@bread_store.errors.get(:address) || @bread_store.errors.get(:address).length > 0)%>

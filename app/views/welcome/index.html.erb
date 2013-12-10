@@ -4,14 +4,17 @@
 <div class="jumbotron">
 	<h1>HotPansへよこそう</h1>
 	<div class="bs-example">
+		<% if bread_store_manager_signed_in? %>
 		<p>
 			<%= link_to "パン屋リストへ", "/bread_stores" %>
 		</p>
 		<p>
 			<%= link_to "パンリストへ", "/breads" %>
 		</p>
+		<% else %>
 		<p>
 			<%= link_to "Facebookでログイン", '/auth/facebook/', class: "btn btn-primary btn-lg"%>
 		</p>
+		<% end %>	
 	</div>
 </div>
