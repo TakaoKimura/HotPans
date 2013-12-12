@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-success"><%= notice %></p>
 <div class="content-block">
 <% if @bread_store_manager.nil? %>
   エラー
@@ -12,7 +12,7 @@
   <% else %>
     <%= render "shared/bread_store_show" %>
     <%= link_to "パン屋情報を編集する", edit_bread_store_path(@bread_store) %><br>
-    <%= link_to 'パン屋を削除する', @bread_store, :class => "labelNotifyDanger", method: :delete, data: { confirm: 'パン屋を削除しますか?' } %>
+    <%= link_to 'パン屋を削除する', @bread_store, :class => "text-danger", method: :delete, data: { confirm: 'パン屋を削除しますか?' } %>
   <% end %>
 <% end %>
 </div>
