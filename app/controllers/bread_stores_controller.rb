@@ -1,13 +1,13 @@
 class BreadStoresController < ApplicationController
-  #before_filter :require_login, :except => [:index, :show]
+  # before_filter :require_login, :except => [:index, :show]
   before_filter :require_login
   before_action :set_bread_store, only: [:show, :edit, :update, :edit_confirm, :destroy]
 
   # GET /bread_stores
   # GET /bread_stores.json
   def index
-    # @bread_stores = BreadStore.all
-    @bread_stores = [current_bread_store_manager.bread_store]
+    @bread_stores = BreadStore.all
+    # @bread_stores = [current_bread_store_manager.bread_store]
   end
 
   # GET /bread_stores/1
