@@ -6,8 +6,8 @@ class BreadStoresController < ApplicationController
   # GET /bread_stores
   # GET /bread_stores.json
   def index
-    @bread_stores = BreadStore.all
-    # @bread_stores = [current_bread_store_manager.bread_store]
+    # @bread_stores = BreadStore.all
+    @bread_stores = [current_bread_store_manager.bread_store]
   end
 
   # GET /bread_stores/1
