@@ -5,10 +5,10 @@ class BreadStoresController < ApplicationController
 
   # GET /bread_stores
   # GET /bread_stores.json
-  def index
+  # def index
     # @bread_stores = BreadStore.all
-    @bread_stores = [current_bread_store_manager.bread_store]
-  end
+    # @bread_stores = [current_bread_store_manager.bread_store]
+  # end
 
   # GET /bread_stores/1
   # GET /bread_stores/1.json
@@ -66,7 +66,7 @@ class BreadStoresController < ApplicationController
         format.html { redirect_to @bread_store, notice: 'パン屋を作成した.' }
         format.json { render action: 'show', status: :created, location: @bread_store }
       else
-        format.html { redirect_to bread_stores_url, notice_error: 'エラーが発生した。'}
+        format.html { redirect_to bread_store_managers_url, notice_error: 'エラーが発生した。'}
       end
     end
   end
@@ -90,7 +90,7 @@ class BreadStoresController < ApplicationController
   def destroy
     @bread_store.destroy
     respond_to do |format|
-      format.html { redirect_to bread_stores_url }
+      format.html { redirect_to bread_store_managers_url }
       format.json { head :no_content }
     end
   end

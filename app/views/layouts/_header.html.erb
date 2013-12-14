@@ -16,9 +16,6 @@
 						<%= link_to "パンリスト",    breads_path %>
 					</li>
 					<li>
-						<%= link_to "パン屋リスト", bread_stores_path %>
-					</li>
-					<li>
 						<% if current_bread_store_manager.bread_store.nil? %>
 							<%= link_to "パン屋登録", new_bread_store_path %>
 						<% else %>
