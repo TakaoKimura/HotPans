@@ -6,7 +6,10 @@ class BreadsController < ApplicationController
   # GET /breads
   # GET /breads.json
   def index
-    @breads = Bread.all
+    @bread_store = current_bread_store_manager.bread_store
+    if !@bread_store.nil?
+      @breads = @bread_store.breads
+    end
   end
 
   # GET /breads/1
@@ -27,6 +30,7 @@ class BreadsController < ApplicationController
   # POST /breads.json
   def create
     @bread = Bread.new(bread_params)
+    @bread.bread_store_id = current_bread_store_manager.bread_store.id
 
     respond_to do |format|
       if @bread.save
