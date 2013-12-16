@@ -1,9 +1,9 @@
 <% if @bread_store.nil? %>
-  <h2>Currently no bread store</h2>
-  <%= link_to "Create new bread store", new_bread_store_path %>
+  <h2>パン屋情報はまだ登録されていません。</h2>
+  <%= link_to "パン屋を登録します", new_bread_store_path %>
 <% elsif @breads.empty? %>
-   <h2>Currently no breads</h2>
-   <%= link_to "Create new bread", new_bread_path %>
+   <h2>パン情報はまだ登録されていません。</h2>
+   <%= link_to "パンを登録します", new_bread_path %>
 <% else %>
 
 <h1>パンリスト</h1>
