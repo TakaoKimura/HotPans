@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "breads/new" do
+=begin  
   before(:each) do
     assign(:bread, stub_model(Bread,
       :name => "MyString",
@@ -17,4 +18,5 @@ describe "breads/new" do
       assert_select "input#bread_kind[name=?]", "bread[kind]"
     end
   end
+=end  
 end
