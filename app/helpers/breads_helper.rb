@@ -22,13 +22,13 @@ module BreadsHelper
   def getFormActionURL(current_view)
     case current_view
     when "new"
-      confirm_bread_store_path(@bread_store)
+      confirm_bread_path(@bread)
     when "confirm"
-      bread_store_path(@bread_store)
+      bread_path(@bread)
     when "edit"
-      edit_confirm_bread_store_path(@bread_store)
+      edit_confirm_bread_path(@bread)
     when "edit_confirm"
-      bread_store_path(@bread_store)
+      bread_path(@bread)
     end
   end
   
