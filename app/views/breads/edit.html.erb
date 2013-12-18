@@ -1,6 +1,4 @@
-<h1>パン情報を編集する</h1>
+<div class="content-block">
+  <%= render :partial => "form", :locals => {:current_view => "edit"} %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to '表示', @bread %> |
-<%= link_to 'パンリスト戻る', breads_path %>

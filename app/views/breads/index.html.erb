@@ -1,21 +1,21 @@
 <% if @bread_store.nil? %>
-  <h2>パン屋情報はまだ登録されていません。</h2>
-  <%= link_to "パン屋を登録します", new_bread_store_path %>
+  <h2>?????????????????</h2>
+  <%= link_to "?????????", new_bread_store_path %>
 <% elsif @breads.empty? %>
-   <h2>パン情報はまだ登録されていません。</h2>
-   <%= link_to "パンを登録します", new_bread_path %>
+   <h2>????????????????</h2>
+   <%= link_to "????????", new_bread_path %>
 <% else %>
 
-<h1>パンリスト</h1>
+<h1>?????</h1>
 
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr class="success">
-      <th>パン名</th>
-      <th>種類</th>
-      <th>表示</th>
-      <th>編集</th>
-      <th>削除</th>
+      <th>???</th>
+      <th>??</th>
+      <th>??</th>
+      <th>??</th>
+      <th>??</th>
     </tr>
   </thead>
 
@@ -24,9 +24,9 @@
       <tr class="active">
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
-        <td><%= link_to '表示', bread %></td>
-        <td><%= link_to '編集', edit_bread_path(bread) %></td>
-        <td><%= link_to '削除', bread, method: :delete, data: { confirm: 'パンの情報を削除しますか?' } %></td>
+        <td><%= link_to '??', bread %></td>
+        <td><%= link_to '??', edit_bread_path(bread) %></td>
+        <td><%= link_to '??', bread, method: :delete, data: { confirm: '?????????????' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +34,6 @@
 
 <br>
 
-<%= link_to '新しいパンを追加する', new_bread_path %>
+<%= link_to '??????????', new_bread_path %>
 <% end %>
+

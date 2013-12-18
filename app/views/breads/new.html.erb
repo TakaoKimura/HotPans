@@ -1,5 +1,4 @@
-<h1>新しいパンを作る</h1>
+<div class="content-block">
+  <%= render :partial => 'form', :locals => {:current_view => "new"}  %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'パンリストに戻る', breads_path %>

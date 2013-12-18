@@ -1,25 +1,27 @@
-<%= form_for(@bread) do |f| %>
-  <% if @bread.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bread.errors.count, "error") %> でパンが作成できなかった:</h2>
-
-      <ul>
-      <% @bread.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name, "パン名" %><br>
-    <%= f.text_field :name %>
+<%= form_for :bread, url: getFormActionURL(current_view), method: :post, html: { action: "confirm", class: "bs-example form-horizontal col-lg-6", id: "bread_form", role: "form" } do |f| %>
+<fieldset>
+<legend><%= getFormLegendByAction() %></legend>
+<div class="form-group">
+  <%= f.label :name, "panmei", class: "col-lg-2 control-label" %><br>
+  <div class="col-lg-10">
+    <%= f.text_field :name, class: "form-control" %>
+    <% if (!@bread.errors.get(:name) || @bread.errors.get(:name).length > 0) %>
+      <label class="text-danger">panmei wo 2 moji ijou nyuuryoku shite kudasai</label>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :kind, "種類" %><br>
-    <%= f.text_field :kind %>
+</div>
+<div class="form-group">
+  <%= f.label :name, "type", class: "col-lg-2 control-label" %><br>
+  <div class="col-lg-10">
+    <%= f.text_field :kind, class: "form-control"%>
   </div>
-  <div class="actions">
-    <%= f.submit getButtonNameByAction()%>
+</div>
+<div class="form-group">
+  <div class="col-lg-10 col-lg-offset-2">
+    <%= button_tag "Reset", type: :reset, class: "btn btn-default" %>
+    <%= f.submit getButtonNameByAction(), class: "btn btn-primary" %>
   </div>
+</div>
+<fieldset>
 <% end %>
+<div class="float-clear"></div>

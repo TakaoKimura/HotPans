@@ -22,8 +22,25 @@ class BreadsController < ApplicationController
     @bread = Bread.new
   end
 
+  # GET /breads/confirm
+  def confirm
+    @bread = Bread.new(bread_params)
+    if !@bread.valid?
+      render :new
+    end
+  end
+
   # GET /breads/1/edit
   def edit
+  end
+
+  # GET /breads/1/edit_confirm
+  def edit_confirm
+    @bread = Bread.find(params[:id])
+    @bread.attributes = bread_params
+    if !@bread.valid?
+      render :edit
+    end
   end
 
   # POST /breads
