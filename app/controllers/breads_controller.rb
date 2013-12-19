@@ -26,7 +26,7 @@ class BreadsController < ApplicationController
       @bread.last_start_yakiagari_time = Time.new
       @bread.is_yakiagari = true
       @bread.save
-      redirect_to breads_path, notice: 'pan yakiagari.'
+      redirect_to breads_path, notice: 'パンが焼き上がりました。'
     end
   end
 
@@ -39,7 +39,7 @@ class BreadsController < ApplicationController
       @bread.last_end_yakiagari_time = Time.new
       @bread.is_yakiagari = false
       @bread.save
-      redirect_to breads_path, notice: 'pan yakiagari end.'
+      redirect_to breads_path, notice: 'パンが普通にもどりました。'
     end
   end
 
