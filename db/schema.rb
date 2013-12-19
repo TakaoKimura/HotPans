@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216132851) do
+ActiveRecord::Schema.define(version: 20131219141946) do
 
   create_table "authentications", force: true do |t|
     t.integer  "bread_store_manager_id"
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 20131216132851) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bread_store_id"
+    t.boolean  "is_yakiagari"
+    t.datetime "last_start_yakiagari_time"
+    t.datetime "last_end_yakiagari_time"
   end
 
 end

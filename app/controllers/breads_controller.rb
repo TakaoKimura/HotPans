@@ -17,6 +17,32 @@ class BreadsController < ApplicationController
   def show
   end
 
+  # GET /breads/1/start_yakiagari
+  def start_yakiagari
+    @bread = Bread.find(params[:id])
+    if @bread.nil?
+      redirect_to breads_path
+    else
+      @bread.last_start_yakiagari_time = Time.new
+      @bread.is_yakiagari = true
+      @bread.save
+      redirect_to breads_path, notice: 'pan yakiagari.'
+    end
+  end
+
+  # GET /breads/1/end_yakiagari
+  def end_yakiagari
+    @bread = Bread.find(params[:id])
+    if @bread.nil?
+      redirect_to breads_path
+    else
+      @bread.last_end_yakiagari_time = Time.new
+      @bread.is_yakiagari = false
+      @bread.save
+      redirect_to breads_path, notice: 'pan yakiagari end.'
+    end
+  end
+
   # GET /breads/new
   def new
     @bread = Bread.new

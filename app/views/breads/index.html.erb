@@ -1,3 +1,4 @@
+<p id="notice" class="text-success"><%= notice %></p>
 <% if @bread_store.nil? %>
   <h2>パン屋情報はありません</h2>
   <%= link_to "パン屋を登録します。", new_bread_store_path %>
@@ -13,6 +14,7 @@
     <tr class="success">
       <th>パン名</th>
      　	　　<th>タイプ</th> 
+      <th>Yaki agari</th>
       <th>編集</th>
       <th>削除</th>
     </tr>
@@ -23,6 +25,13 @@
       <tr class="active">
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
+        <td>
+            <% if bread.is_yakiagari? %>
+               <%= link_to 'yakiagari shuuryou', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small" %>
+            <% else %>
+               <%= link_to 'yakiagari kaishi', start_yakiagari_bread_path(bread), class: "btn btn-primary btn-small" %>
+            <% end %>
+        </td>
         <td><%= link_to '編集', edit_bread_path(bread) %></td>
         <td><%= link_to '削除', bread, method: :delete, data: { confirm: 'パンを削除しますか。' } %></td>
       </tr>
