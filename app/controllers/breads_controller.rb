@@ -20,7 +20,7 @@ class BreadsController < ApplicationController
   # GET /breads/1/start_yakiagari
   def start_yakiagari
     @bread = Bread.find(params[:id])
-    if @bread.nil?
+    if @bread.nil? or @bread.bread_store_id != current_bread_store_manager.bread_store.id 
       redirect_to breads_path
     else
       @bread.last_start_yakiagari_time = Time.new
@@ -33,7 +33,7 @@ class BreadsController < ApplicationController
   # GET /breads/1/end_yakiagari
   def end_yakiagari
     @bread = Bread.find(params[:id])
-    if @bread.nil?
+    if @bread.nil? or @bread.bread_store_id != current_bread_store_manager.bread_store.id
       redirect_to breads_path
     else
       @bread.last_end_yakiagari_time = Time.new
