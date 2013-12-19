@@ -21,12 +21,8 @@
   </thead>
 
   <tbody>
-    <% @breads.each do |bread| %>
-      <% if bread.is_yakiagari? %>
-        <tr class="danger">
-      <% else %>
-        <tr class="active">
-	  <% end %>
+    <% @breads.each do |bread| %>	
+      <tr class="active">
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
         <td>
