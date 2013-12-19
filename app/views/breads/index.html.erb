@@ -26,10 +26,10 @@
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
         <td>
-            <% if bread.is_yakiagari? %>
-               <%= link_to '焼き上がり', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small btn-fix-width" %>
-            <% else %>
+            <% if !bread.is_yakiagari? %>
                <%= link_to '普通に戻る', start_yakiagari_bread_path(bread), class: "btn btn-primary btn-small btn-fix-width" %>
+            <% else %>
+               <%= link_to '焼き上がり', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small btn-fix-width" %>
             <% end %>
         </td>
         <td><%= link_to '編集', edit_bread_path(bread) %></td>
