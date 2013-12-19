@@ -58,6 +58,9 @@ class BreadsController < ApplicationController
 
   # GET /breads/1/edit
   def edit
+    if @bread.bread_store_id != current_bread_store_manager.bread_store.id
+      redirect_to breads_path
+    end
   end
 
   # GET /breads/1/edit_confirm
