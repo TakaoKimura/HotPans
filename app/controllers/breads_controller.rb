@@ -39,7 +39,7 @@ class BreadsController < ApplicationController
       @bread.last_end_yakiagari_time = Time.new
       @bread.is_yakiagari = false
       @bread.save
-      redirect_to breads_path, notice: 'パンが普通にもどりました。'
+      redirect_to breads_path, notice: 'パンが普通に戻りました。'
     end
   end
 
