@@ -1,6 +1,6 @@
 <%= form_for :bread_store, url: getFormActionURL(current_view), method: :post, html: { action: "confirm", class: "bs-example form-horizontal col-lg-6", id: "bread_store_form", role:"form" }  do |f| %>
 <fieldset>
-<legend><%= getFormLegendByAction() %></legend>
+<legend><%= getFormLegendByControllerAndAction() %></legend>
 <div class="form-group">
 	<%= f.label :name,"パン屋名", class: "col-lg-2 control-label"%>
 	<div class="col-lg-10">
