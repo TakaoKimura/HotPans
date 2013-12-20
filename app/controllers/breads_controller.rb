@@ -53,6 +53,9 @@ class BreadsController < ApplicationController
     @bread = Bread.new(bread_params)
     if !@bread.valid?
       render :new
+    elsif !check_duplicate_bread_name_one_store(bread_params["name"])
+      @bread.errors.add(:name, "Error Duplicate Bread Name")
+      render :new
     end
   end
 
@@ -69,6 +72,9 @@ class BreadsController < ApplicationController
     @bread.attributes = bread_params
     if !@bread.valid?
       render :edit
+    elsif !check_duplicate_bread_name_one_store(bread_params["name"], @bread.id)
+      @bread.errors.add(:name, "Error Duplicate Bread Name")
+      render :new
     end
   end
 
@@ -114,6 +120,24 @@ class BreadsController < ApplicationController
   end
 
   private
+    # No duplicate bread's name for one bread store    
+    def check_duplicate_bread_name_one_store(bread_name_in, bread_id_in = nil)
+       bread_store = current_bread_store_manager.bread_store
+       if bread_store.nil?
+         return true
+       end
+       breads = bread_store.breads
+       if breads.empty?
+         return true
+       end
+       breads.each do |bread|
+         if bread.id != bread_id_in and bread.name == bread_name_in
+           return false
+         end
+       end
+       return true
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_bread
       @bread = Bread.find(params[:id])
