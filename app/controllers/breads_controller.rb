@@ -72,7 +72,7 @@ class BreadsController < ApplicationController
     @bread.attributes = bread_params
     if !@bread.valid?
       render :edit
-    elsif !check_duplicate_bread_name_one_store(bread_params["name"])
+    elsif !check_duplicate_bread_name_one_store(bread_params["name"], @bread.id)
       @bread.errors.add(:name, "Error Duplicate Bread Name")
       render :new
     end
