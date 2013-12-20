@@ -13,9 +13,9 @@ module BreadsHelper
   def getFormLegendByAction
     current_action = params[:action]
     if (current_action == "new")
-      "パン屋登録"
+      "パン登録"
     elsif (current_action == "edit")
-      "パン屋情報編集"
+      "パン情報編集"
     end
   end
   
