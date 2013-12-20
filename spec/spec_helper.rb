@@ -40,3 +40,15 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+
+Dir.glob("spec/**/*steps.rb") { |f| load f, true }
+
+require 'capybara/dsl'
+require 'capybara/rspec'
+require 'capybara/webkit'
+#require 'capybara/poltergeist'
+require 'rspec/rails'
+require 'rspec/autorun'
+require 'turnip'
+require 'turnip/capybara'

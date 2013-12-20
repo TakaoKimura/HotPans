@@ -58,3 +58,9 @@ gem 'devise-encryptable'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'oauth2'
+
+group :development, :test do
+  gem 'capybara', '2.0.3'
+  gem 'capybara-webkit'
+  gem 'turnip'
+end
