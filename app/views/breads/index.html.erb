@@ -14,7 +14,8 @@
     <tr class="success">
       <th>パン名</th>
      　	　　<th>タイプ</th> 
-      <th>焼き上がり</th>
+      <th>ステータス</th>
+      <th>ステータス変更</th>
       <th>編集</th>
       <th>削除</th>
     </tr>
@@ -26,11 +27,17 @@
         <td><%= bread.name %></td>
         <td><%= bread.kind %></td>
         <td>
+        	<% if bread.is_yakiagari? %>
+        		焼き上がり
+        	<% else %>
+        		普通
+        	<% end %>
+        </td>
+        <td>
             <% if bread.is_yakiagari? %>
               <%= link_to '普通に戻る', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small btn-fix-width" %>
-              (焼き上がり中)
             <% else %>
-              <%= link_to '焼き上がり', start_yakiagari_bread_path(bread), class: "btn btn-primary btn-small btn-fix-width" %>
+              <%= link_to '焼き上がりにする', start_yakiagari_bread_path(bread), class: "btn btn-primary btn-small btn-fix-width" %>
             <% end %>
         </td>
         <td><%= link_to '編集', edit_bread_path(bread) %></td>
