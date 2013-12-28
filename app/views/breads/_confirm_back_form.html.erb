@@ -1,0 +1,6 @@
+<%= form_for :bread, url: getFormBackActionURL(current_view), method: :post do |f| %>
+	<%= f.hidden_field :name %>
+	<%= f.hidden_field :kind %>
+	<%= f.submit "modoru", class: "btn btn-default"%>
+<% end %>
+

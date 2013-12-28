@@ -1,6 +1,5 @@
-<%= form_for :bread, url: getFormActionURL(current_view), method: getFormMethod(current_view) do |f|%>
+<%= form_for :bread, url: getFormActionURL(current_view), method: getFormMethod(current_view), html: { class: "float-left" } do |f|%>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :kind %>
   <%= f.submit "確定", class: "btn btn-primary" %>
-  <%= button_tag "戻る", :type => "button", class: "btn btn-default", :onclick => "window.history.back();" %>
 <% end %>

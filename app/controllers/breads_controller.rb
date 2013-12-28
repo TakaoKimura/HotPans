@@ -1,7 +1,7 @@
 class BreadsController < ApplicationController
   #before_filter :require_login, :except => [:index]
   before_filter :require_login
-  before_action :set_bread, only: [:show, :edit, :update, :destroy]
+  before_action :set_bread, only: [:show, :edit, :edit_confirm, :update, :destroy]
 
   # GET /breads
   # GET /breads.json
@@ -45,7 +45,7 @@ class BreadsController < ApplicationController
 
   # GET /breads/new
   def new
-    @bread = Bread.new
+    @bread = Bread.new(bread_params)
   end
 
   # GET /breads/confirm
@@ -64,11 +64,11 @@ class BreadsController < ApplicationController
     if @bread.bread_store_id != current_bread_store_manager.bread_store.id
       redirect_to breads_path
     end
+    @bread.attributes = bread_params
   end
 
   # GET /breads/1/edit_confirm
   def edit_confirm
-    @bread = Bread.find(params[:id])
     @bread.attributes = bread_params
     if !@bread.valid?
       render :edit
@@ -145,6 +145,8 @@ class BreadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bread_params
-      params.require(:bread).permit(:name, :kind)
+      if !params[:bread].nil?
+        params.require(:bread).permit(:name, :kind)
+      end
     end
 end

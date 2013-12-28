@@ -57,6 +57,24 @@ module ApplicationHelper
       end
     end
   end
+
+  def getFormBackActionURL(current_view)
+    current_controller = params[:controller]
+    case current_view
+    when "confirm"
+      if current_controller == "bread_stores"
+        new_back_bread_store_path(@bread_store)  
+      elsif current_controller == "breads"
+        new_back_bread_path(@bread)
+      end
+    when "edit_confirm"
+      if current_controller == "bread_stores"
+        edit_back_bread_store_path(@bread_store)  
+      elsif current_controller == "breads"
+        edit_back_bread_path(@bread)
+      end
+    end
+  end
   
   def getFormMethod(current_view)
     if(current_view == "edit_confirm")

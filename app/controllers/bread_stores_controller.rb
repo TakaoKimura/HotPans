@@ -19,10 +19,11 @@ class BreadStoresController < ApplicationController
   def new
     user_bread_store = current_bread_store_manager.bread_store
     if user_bread_store.nil?
-      @bread_store = BreadStore.new
+      @bread_store = BreadStore.new(bread_store_params)
     else
       redirect_to edit_bread_store_path(user_bread_store)
     end
+    
   end
   
   # POST /bread_stores/confirm
@@ -41,6 +42,7 @@ class BreadStoresController < ApplicationController
       redirect_to new_bread_store_path
     elsif user_bread_store.id == param_id
       @bread_store = user_bread_store
+      @bread_store.attributes = bread_store_params
     else
       redirect_to edit_bread_store_path(user_bread_store)
     end
@@ -106,6 +108,8 @@ class BreadStoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bread_store_params
-      params.require(:bread_store).permit(:name, :phone_number, :address)
+      if !params[:bread_store].nil?
+        params.require(:bread_store).permit(:name, :phone_number, :address)
+      end
     end
 end

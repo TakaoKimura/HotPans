@@ -30,3 +30,6 @@
 .float-clear{
   clear: both;
 }
+.float-left{
+  float: left;
+}

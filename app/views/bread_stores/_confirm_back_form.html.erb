@@ -1,0 +1,7 @@
+<%= form_for :bread_store, url: getFormBackActionURL(current_view), method: :post do |f| %>
+	<%= f.hidden_field :name %>
+	<%= f.hidden_field :phone_number %>
+	<%= f.hidden_field :address %>
+	<%= f.submit "modoru", class: "btn btn-default"%>
+<% end %>
+
