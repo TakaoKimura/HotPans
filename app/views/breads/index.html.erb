@@ -1,10 +1,14 @@
 <p id="notice" class="text-success"><%= notice %></p>
 <% if @bread_store.nil? %>
-  <h2>パン屋情報はありません</h2>
-  <%= link_to "パン屋を登録します。", new_bread_store_path %>
+	<div class="jumbotron">
+	  <h2>パン屋情報はありません</h2>
+	  <%= link_to "パン屋を登録します。", new_bread_store_path %>
+	</div>
 <% elsif @breads.empty? %>
-   <h2>パン情報はありません</h2>
-   <%= link_to "新しいパンを登録します。", new_bread_path %>
+	<div class="jumbotron">
+	   <h2>パン情報はありません</h2>
+	   <%= link_to "新しいパンを登録します。", new_bread_path %>
+	</div>   
 <% else %>
 
 <h1>パンリスト</h1>
