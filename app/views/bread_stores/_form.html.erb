@@ -22,7 +22,7 @@
 </div>
 
 <div class="form-group">
-	<%= f.label :address, "アドレス", class: "col-lg-2 control-label" %>
+	<%= f.label :address, "住所", class: "col-lg-2 control-label" %>
 	<div class="col-lg-10">
 		<%= f.text_field :address, class: "form-control"  %>
 		<%if (!@bread_store.errors.get(:address) || @bread_store.errors.get(:address).length > 0)%>
