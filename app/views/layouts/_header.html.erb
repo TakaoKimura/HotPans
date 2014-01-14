@@ -1,43 +1,43 @@
 <div class="navbar navbar-default navbar-fixed-top">
-	
-		<div class="container">
-			<div class="navbar-header">
-				<%= link_to "HotPans", :root, class: "navbar-brand" %>
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-			</div>
-			<div class="navbar-collapse collapse" id="navbar-main">
-				<ul class="nav navbar-nav navbar-right">
-                                        <li>
-                                           <%= link_to "yakiagari pan", yakiagari_breads_path %>
-                                        </li>
-					<% if bread_store_manager_signed_in? %>
-					<li>
-						<%= link_to "パンリスト",    breads_path %>
-					</li>
-					<li>
-						<% if current_bread_store_manager.bread_store.nil? %>
-							<%= link_to "パン屋登録", new_bread_store_path %>
-						<% else %>
-							<%= link_to "パン屋編集", edit_bread_store_path(current_bread_store_manager.bread_store) %>
-						<% end %>
-					</li>	
-					<% end %>	
-					<li>
-						<% if bread_store_manager_signed_in? %>
-						  <%= link_to current_bread_store_manager.manager_name, bread_store_managers_url %>
-						  </li>
-						  <li>
-						  <%= link_to "ログオフ", destroy_bread_store_manager_session_path, :method => :delete %>
-						<% else %>
-						  <%= link_to 'Facebookでログイン', '/auth/facebook/' %>
-						<% end %>
-					</li>
-				</ul>
-			</div>
+
+	<div class="container">
+		<div class="navbar-header">
+			<%= link_to "HotPans", :root, class: "navbar-brand" %>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 		</div>
-	
+		<div class="navbar-collapse collapse" id="navbar-main">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<%= link_to "焼き上がりパン", yakiagari_breads_path %>
+				</li>
+				<% if bread_store_manager_signed_in? %>
+				<li>
+					<%= link_to "パンリスト",    breads_path %>
+				</li>
+				<li>
+					<% if current_bread_store_manager.bread_store.nil? %>
+					<%= link_to "パン屋登録", new_bread_store_path %>
+					<% else %>
+					<%= link_to "パン屋編集", edit_bread_store_path(current_bread_store_manager.bread_store) %>
+					<% end %>
+				</li>
+				<% end %>
+				<li>
+					<% if bread_store_manager_signed_in? %>
+					<%= link_to current_bread_store_manager.manager_name, bread_store_managers_url %>
+				</li>
+				<li>
+					<%= link_to "ログオフ", destroy_bread_store_manager_session_path, :method => :delete %>
+					<% else %>
+					<%= link_to 'Facebookでログイン', '/auth/facebook/' %>
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 </div>
