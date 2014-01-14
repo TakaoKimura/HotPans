@@ -1,6 +1,6 @@
 class BreadsController < ApplicationController
   #before_filter :require_login, :except => [:index]
-  before_filter :require_login
+  before_filter :require_login, :except => [:yakiagari_breads]
   before_action :set_bread, only: [:show, :edit, :edit_confirm, :update, :destroy]
 
   # GET /breads
@@ -15,6 +15,11 @@ class BreadsController < ApplicationController
   # GET /breads/1
   # GET /breads/1.json
   def show
+  end
+
+  # GET /breads/yakiagari_breads
+  def yakiagari_breads
+    @yakiagari_breads = Bread.where(is_yakiagari: true).order("last_start_yakiagari_time DESC")
   end
 
   # GET /breads/1/start_yakiagari

@@ -11,6 +11,9 @@
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                           <%= link_to "yakiagari pan", yakiagari_breads_path %>
+                                        </li>
 					<% if bread_store_manager_signed_in? %>
 					<li>
 						<%= link_to "パンリスト",    breads_path %>

@@ -1,0 +1,29 @@
+
+  <% if @yakiagari_breads.empty? %>
+    <div class="jumbotron">
+     No yakiagari breads
+    </div>
+  <% else %>
+     <h1>yakiagarichuu pan</h1>
+     <table class="table table-striped table-bordered table-hover">
+       <thead>
+         <tr class="success">
+           <th>panya mei</th>
+           <th>panya address</th>
+           <th>bread mei</th>
+         </tr>
+       </thead>
+       <tbody>
+       <% @yakiagari_breads.each do |bread| %>
+         <% if bread.bread_store.nil? %>
+           <% next %>
+         <% end %>
+         <tr class="active">
+           <td><%= bread.bread_store.name %></td>
+           <td><%= bread.bread_store.address%></td>
+           <td><%= bread.name %></td>
+         </tr>
+       <%end %>
+       </tbody>
+     </table>
+  <% end %>
