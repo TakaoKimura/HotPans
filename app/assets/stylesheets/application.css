@@ -34,5 +34,14 @@
   float: left;
 }
 .btn-facebook-login{
-  color: blue;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #0000FF;
+  border-color: #0000FF;
+}
+.btn-facebook-login:hover{
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #000071;
+  border-color: #000071;
 }
