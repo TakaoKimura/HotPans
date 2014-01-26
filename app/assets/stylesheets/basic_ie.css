@@ -11,7 +11,7 @@
 /* IE 6 hacks */
 /* url('/assets/x.png') */
 #simplemodal-container a.modalCloseImg {
-	background-image: none; 
+	background: none; 
 	right:-14px; 
 	width:22px; 
 	height:26px; 
