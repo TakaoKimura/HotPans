@@ -10,9 +10,9 @@
 
 /* IE 6 hacks */
 #simplemodal-container a.modalCloseImg {
-	background:none; 
+	background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PNG_transparency_demonstration_2.png/280px-PNG_transparency_demonstration_2.png); 
 	right:-14px; 
 	width:22px; 
 	height:26px; 
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PNG_transparency_demonstration_2.png/280px-PNG_transparency_demonstration_2.png",sizingMethod='scale');
+	/* filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PNG_transparency_demonstration_2.png/280px-PNG_transparency_demonstration_2.png", sizingMethod='scale');*/
 }
