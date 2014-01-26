@@ -1,0 +1,33 @@
+<p>
+  <strong>パン屋名:</strong>
+  <%= @bread_store.name %>
+</p>
+
+<p>
+  <strong>電話番号:</strong>
+  <%= @bread_store.phone_number %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @bread_store.address %>
+</p>
+
+<p>
+	<strong>焼き上がりパン一覧</strong>
+	<% first = true %>
+	<% @bread_store.breads.each do |bread| %>
+		<% if bread.is_yakiagari? %>
+			<% if first==true %>
+				<ul>
+				<% first = false %>					
+			<% end %>
+			<li><%= bread.name %></li>		
+		<% end %>
+	<% end %>
+	<% if first == false %>
+		</ul>
+	<% else %>
+		なし
+	<% end %>		
+</p>
