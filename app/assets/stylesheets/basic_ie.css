@@ -9,10 +9,11 @@
  */
 
 /* IE 6 hacks */
+/* url('/assets/x.png') */
 #simplemodal-container a.modalCloseImg {
-	background-image: url('/assets/x.png'); 
+	background-image: none; 
 	right:-14px; 
 	width:22px; 
 	height:26px; 
-	/* filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PNG_transparency_demonstration_2.png/280px-PNG_transparency_demonstration_2.png", sizingMethod='scale');*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/assets/x.png", sizingMethod='scale');
 }
