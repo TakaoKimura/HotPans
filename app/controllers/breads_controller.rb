@@ -20,6 +20,10 @@ class BreadsController < ApplicationController
   # GET /breads/yakiagari_breads
   def yakiagari_breads
     @yakiagari_breads = Bread.where(is_yakiagari: true).order("last_start_yakiagari_time DESC")
+    @bread_store_id = params[:bread_store_id]
+    if !@bread_store_id.nil?
+      @bread_store = BreadStore.find(@bread_store_id)
+    end
   end
 
   # GET /breads/1/start_yakiagari

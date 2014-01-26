@@ -26,16 +26,18 @@
 	</tbody>
 </table>
 <% end %>
-<div id='content'>
-	<div id='basic-modal'>
-		basic model 
+<% if !@bread_store_id.nil? and !@bread_store.empty? %>
+	<div id='content'>
+		<div id='basic-modal'>
+			basic modal 
+		</div>
+	
+		<!-- modal content -->
+		<div id="basic-modal-content">
+			<h2>Show bread store</h2>
+		</div>
 	</div>
-
-	<!-- modal content -->
-	<div id="basic-modal-content">
-		start<br>
-		content here<br>
-		end<br>
-	</div>
-</div>
-<script type='text/javascript'>$('#basic-modal-content').modal();</script>
+<% end %>
+<script type='text/javascript'>
+	$('#basic-modal-content').modal();
+</script>

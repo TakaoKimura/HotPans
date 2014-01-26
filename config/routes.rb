@@ -5,6 +5,7 @@ HotPans::Application.routes.draw do
   get '/auth/:provider/callback' => 'authentications#create'
   devise_for :bread_store_managers
 
+  get '/breads/yakiagari_breads/:bread_store_id', to: 'breads#yakiagari_breads', as: 'yakiagari_breads_show_bread_store'
   get '/breads/yakiagari_breads', to: 'breads#yakiagari_breads', as: 'yakiagari_breads'
   get '/breads/:id/start_yakiagari', to: 'breads#start_yakiagari', as: 'start_yakiagari_bread'
   get '/breads/:id/end_yakiagari', to: 'breads#end_yakiagari', as: 'end_yakiagari_bread'
