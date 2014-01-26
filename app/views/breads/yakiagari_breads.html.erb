@@ -18,7 +18,7 @@
 		<% next %>
 		<% end %>
 		<tr class="active">
-			<td><%= bread.bread_store.name %></td>
+			<td><%= link_to bread.bread_store.name, yakiagari_breads_show_bread_store(bread_store) %></td>
 			<td><%= bread.bread_store.address%></td>
 			<td><%= bread.name %></td>
 		</tr>
