@@ -16,7 +16,7 @@
 </p>
 
 <p>
-	<strong class="popup_label">焼き上がりパン一覧</strong>
+	<strong class="popup_label">焼き上がりパン一覧<br></strong>
 	<% first = true %>
 	<% @bread_store.breads.each do |bread| %>
 		<% if bread.is_yakiagari? %>
@@ -35,7 +35,7 @@
 </p>
 
 <p>
-	<strong class="popup_label">焼き上がっていないパン一覧</strong>
+	<strong class="popup_label">焼き上がっていないパン一覧<br></strong>
 	<% first = true %>
 	<% @bread_store.breads.each do |bread| %>
 		<% if !bread.is_yakiagari? %>
