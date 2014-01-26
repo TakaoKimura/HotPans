@@ -10,7 +10,7 @@
 
 /* IE 6 hacks */
 #simplemodal-container a.modalCloseImg {
-	background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PNG_transparency_demonstration_2.png/280px-PNG_transparency_demonstration_2.png); 
+	background-image: url(<%= asset_path 'images/x.png'>); 
 	right:-14px; 
 	width:22px; 
 	height:26px; 
