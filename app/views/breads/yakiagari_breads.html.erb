@@ -28,16 +28,12 @@
 <% end %>
 <% if !@bread_store_id.nil? and !@bread_store.nil? %>
 	<div id='content'>
-		<div id='basic-modal'>
-			basic modal 
-		</div>
-	
 		<!-- modal content -->
 		<div id="basic-modal-content">
 			<h2>Show bread store</h2>
 		</div>
 	</div>
+	<script type='text/javascript'>
+		$('#basic-modal-content').modal();
+	</script>
 <% end %>
-<script type='text/javascript'>
-	$('#basic-modal-content').modal();
-</script>
