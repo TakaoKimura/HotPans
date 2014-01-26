@@ -27,12 +27,11 @@
 </table>
 <% end %>
 <% if !@bread_store_id.nil? and !@bread_store.nil? %>
-	<div id='content'>
 		<!-- modal content -->
-		<div id="basic-modal-content">
-			<%= render "shared/bread_store_popup" %>
-		</div>
+	<div id="basic-modal-content">
+		<%= render "shared/bread_store_popup" %>
 	</div>
+
 	<script type='text/javascript'>
 		$('#basic-modal-content').modal();
 	</script>
