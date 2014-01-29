@@ -48,3 +48,7 @@
 .popup_label{
 	color: #84b8d9;
 }
+#map{
+  width: 680px;
+  height: 300px;
+}
