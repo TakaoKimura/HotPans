@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219141946) do
+ActiveRecord::Schema.define(version: 20140129160702) do
 
   create_table "authentications", force: true do |t|
     t.integer  "bread_store_manager_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20131219141946) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bread_store_manager_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "breads", force: true do |t|

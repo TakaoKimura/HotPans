@@ -23,6 +23,12 @@ class BreadsController < ApplicationController
     @bread_store_id = params[:bread_store_id]
     if !@bread_store_id.nil?
       @bread_store = BreadStore.find(@bread_store_id)
+      @bread_stores = [@bread_store]
+      @hash = Gmaps4rails.build_markers(@bread_stores) do |bread_store, marker|
+        marker.lat bread_store.latitude
+        marker.lng bread_store.longitude
+        marker.infowindow bread_store.name
+      end
     end
   end
 

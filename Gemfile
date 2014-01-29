@@ -59,6 +59,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'oauth2'
 
+# For googlemaps
+gem 'geocoder'
+gem 'gmaps4rails'
+
 group :development, :test do
   gem 'capybara', '2.0.3'
   gem 'capybara-webkit'
