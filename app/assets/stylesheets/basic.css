@@ -15,6 +15,7 @@
 
 /* Container */
 #simplemodal-container {
+  top: -100px;
   height:550px; 
   width:1000px; 
   color:#bbb; 
