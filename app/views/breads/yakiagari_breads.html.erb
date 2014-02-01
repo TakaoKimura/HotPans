@@ -7,9 +7,9 @@
 <table class="table table-striped table-bordered table-hover">
 	<thead>
 		<tr class="success">
+			<th>パン名</th>
 			<th>パン屋名</th>
 			<th>パン屋住所</th>
-			<th>パン名</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,9 +18,9 @@
 		<% next %>
 		<% end %>
 		<tr class="active">
+			<td><%= bread.name %></td>
 			<td><%= link_to bread.bread_store.name, yakiagari_breads_show_bread_store_path(bread.bread_store) %></td>
 			<td><%= bread.bread_store.address%></td>
-			<td><%= bread.name %></td>
 		</tr>
 		<%end %>
 	</tbody>
