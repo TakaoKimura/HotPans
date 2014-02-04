@@ -1,6 +1,6 @@
 class BreadsController < ApplicationController
   #before_filter :require_login, :except => [:index]
-  before_filter :require_login, :except => [:yakiagari_breads]
+  before_filter :require_login, :except => [:yakiagari_breads] 
   before_action :set_bread, only: [:show, :edit, :edit_confirm, :update, :destroy]
 
   # GET /breads
