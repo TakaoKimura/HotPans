@@ -20,6 +20,19 @@ class BreadsController < ApplicationController
   # GET /breads/yakiagari_breads
   def yakiagari_breads
     @yakiagari_breads = Bread.where(is_yakiagari: true).order("last_start_yakiagari_time DESC")
+    @yakiagari_breads.each do |bread|
+      puts "check check"
+      start_yakiagari_time = bread.last_start_yakiagari_time
+      now = Time.new
+      yakiagari_time = 30.minutes
+      if start_yakiagari_time < (now - yakiagari_time)
+        @yakiagari_breads -= [bread]
+        bread.last_end_yakiagari_time = Time.new
+        bread.is_yakiagari = false
+        bread.save
+      end
+    end
+
     @bread_store_id = params[:bread_store_id]
     if !@bread_store_id.nil?
       @bread_store = BreadStore.find(@bread_store_id)
