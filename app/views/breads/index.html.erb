@@ -34,12 +34,12 @@
         	<% if bread.is_yakiagari? %>
         		<b class="text-primary">焼き上がり</b>
         	<% else %>
-        		普通
+        		通常
         	<% end %>
         </td>
         <td>
             <% if bread.is_yakiagari? %>
-              <%= link_to '普通に戻る', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small btn-fix-width" %>
+              <%= link_to '通常に戻る', end_yakiagari_bread_path(bread), class: "btn btn-danger btn-small btn-fix-width" %>
             <% else %>
               <%= link_to '焼き上がりにする', start_yakiagari_bread_path(bread), class: "btn btn-primary btn-small btn-fix-width" %>
             <% end %>
