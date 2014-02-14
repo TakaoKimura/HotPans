@@ -2,6 +2,7 @@ class BreadsController < ApplicationController
   #before_filter :require_login, :except => [:index]
   before_filter :require_login, :except => [:yakiagari_breads] 
   before_action :set_bread, only: [:show, :edit, :edit_confirm, :update, :destroy]
+  before_action :set_yakiagari_fix_time
 
   # GET /breads
   # GET /breads.json
@@ -9,6 +10,14 @@ class BreadsController < ApplicationController
     @bread_store = current_bread_store_manager.bread_store
     if !@bread_store.nil?
       @breads = @bread_store.breads
+      @breads.each do |bread|
+        start_yakiagari_time = bread.last_start_yakiagari_time
+        if bread.is_yakiagari == true and start_yakiagari_time < (Time.new - @yakiagari_fix_time)
+          bread.last_end_yakiagari_time = start_yakiagari_time + @yakiagari_fix_time
+          bread.is_yakiagari = false
+          bread.save
+        end
+      end
     end
   end
 
@@ -20,14 +29,13 @@ class BreadsController < ApplicationController
   # GET /breads/yakiagari_breads
   def yakiagari_breads
     @yakiagari_breads = Bread.where(is_yakiagari: true).order("last_start_yakiagari_time DESC")
+    
+    # Auto end yakiagari status after yakiagari_fix_time
     @yakiagari_breads.each do |bread|
-      puts "check check"
       start_yakiagari_time = bread.last_start_yakiagari_time
-      now = Time.new
-      yakiagari_time = 30.minutes
-      if start_yakiagari_time < (now - yakiagari_time)
+      if start_yakiagari_time < (Time.new - @yakiagari_fix_time)
         @yakiagari_breads -= [bread]
-        bread.last_end_yakiagari_time = Time.new
+        bread.last_end_yakiagari_time = start_yakiagari_time + @yakiagari_fix_time
         bread.is_yakiagari = false
         bread.save
       end
@@ -169,6 +177,11 @@ class BreadsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bread
       @bread = Bread.find(params[:id])
+    end
+
+    # Set yakiagari_fix_time
+    def set_yakiagari_fix_time
+      @yakiagari_fix_time = 30.minutes
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
