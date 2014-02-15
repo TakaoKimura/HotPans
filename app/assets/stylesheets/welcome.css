@@ -11,14 +11,17 @@ body{
 	font: normal normal bold 40px/1.4em 'noticia text', serif;
 	color: rgb(58, 28, 19);
 }
+
 .font_2{
 	font: normal normal bold 24px/1.4em 'noticia text', serif;
 	color: rgb(58, 28, 19);
 }
+
 .font_3{
 	font: normal normal bold 35px/1.4em 'noticia text', serif;
 	color: rgb(58, 28, 19);
 }
+
 .font_7{
 	font: normal normal normal 18px/1.4em helvetica-w01-light, helvetica-w02-light, sans-serif;
 	color: rgb(58, 28, 19);
@@ -91,6 +94,7 @@ body{
 	background-color: rgb(244, 239, 225);
 	width: 279px;
 	height: 550px;
+	text-align: justify;
 }
 
 #footer_line{
